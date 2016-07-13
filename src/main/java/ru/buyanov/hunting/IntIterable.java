@@ -19,14 +19,18 @@ public class IntIterable implements Iterable<Integer> {
 
     private class IntIterator implements Iterator<Integer> {
 
+        private int count = 0;
+
         public boolean hasNext() {
-            //TODO: You task is implement this method
-            return false;
+
+            return count < backed.length;
+
         }
 
         public Integer next() {
-            //TODO: You task is implement this method
-            return null;
+
+            return backed[count++];
+
         }
 
         public void remove() {

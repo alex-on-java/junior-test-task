@@ -8,6 +8,7 @@ import java.util.Iterator;
 public class IntIterable implements Iterable<Integer> {
     int[] backed;
 
+    private int currentIndex = 0;
 
     public IntIterable(int[] backed) {
         this.backed = backed;
@@ -19,14 +20,16 @@ public class IntIterable implements Iterable<Integer> {
 
     private class IntIterator implements Iterator<Integer> {
 
+
+
         public boolean hasNext() {
-            //TODO: You task is implement this method
-            return false;
+
+           return currentIndex < backed.length;
         }
 
         public Integer next() {
-            //TODO: You task is implement this method
-            return null;
+
+           return backed[currentIndex++];
         }
 
         public void remove() {

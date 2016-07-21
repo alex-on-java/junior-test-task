@@ -23,6 +23,7 @@ public class IntIteratorTest {
         assertEquals("Didn't went throw array", i, Integer.valueOf(arr.length));
     }
 
+
     @Test
     public void testBlankForeach() {
         int[] arr = new int[0];

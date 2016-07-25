@@ -3,6 +3,8 @@ package ru.buyanov.hunting;
 
 import org.junit.Test;
 
+import java.util.NoSuchElementException;
+
 import static org.junit.Assert.*;
 
 /**
@@ -29,5 +31,17 @@ public class IntIteratorTest {
         for (Integer el : new IntIterable(arr)) {
             assertFalse("Shouldn't come here", true);
         }
+    }
+
+    @Test
+    public void testOfThrowingException() {
+        int[] arr = new int[0];
+        IntIterable intIterable = new IntIterable(arr);
+        try {
+            System.out.println(intIterable.iterator().next());
+        } catch (NoSuchElementException e) {
+            return;
+        }
+        fail("The exception have to be thrown");
     }
 }

@@ -42,6 +42,6 @@ public class IntIteratorTest {
         } catch (NoSuchElementException e) {
             return;
         }
-        fail("The exception have to be thrown");
+        fail("The exception has to be thrown");
     }
 }

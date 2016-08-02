@@ -21,7 +21,7 @@ public class IntIterable implements Iterable<Integer> {
     private class IntIterator implements Iterator<Integer> {
 
         public boolean hasNext() {
-            return (current!=backed.length);
+            return (current<backed.length);
         }
 
         public Integer next() {

@@ -18,15 +18,20 @@ public class IntIterable implements Iterable<Integer> {
     }
 
     private class IntIterator implements Iterator<Integer> {
-
+		private int index=0;
+		
         public boolean hasNext() {
             //TODO: You task is implement this method
-            return false;
+            if (backed!=null && backed.length>index) {
+                return true;
+            } else {
+                return false;
+            }
         }
 
         public Integer next() {
             //TODO: You task is implement this method
-            return null;
+			return (Integer) backed[index++];
         }
 
         public void remove() {

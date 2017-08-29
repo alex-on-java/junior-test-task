@@ -21,12 +21,19 @@ public class IntIterable implements Iterable<Integer> {
 
         public boolean hasNext() {
             //TODO: You task is implement this method
-            return false;
+            return backed.length>0;
         }
 
         public Integer next() {
             //TODO: You task is implement this method
-            return null;
+            Integer res = backed[0];
+            int[] _backed = new int[backed.length-1];
+            for (int i = 1;i< backed.length; i++ ) {
+                _backed[i-1] = backed[i];
+            }
+            ;
+            backed = _backed;
+            return res;
         }
 
         public void remove() {

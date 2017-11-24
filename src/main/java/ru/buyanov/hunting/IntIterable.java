@@ -10,6 +10,7 @@ public class IntIterable implements Iterable<Integer> {
 
 
     public IntIterable(int[] backed) {
+
         this.backed = backed;
     }
 
@@ -19,14 +20,16 @@ public class IntIterable implements Iterable<Integer> {
 
     private class IntIterator implements Iterator<Integer> {
 
+        int index = 0;
+
         public boolean hasNext() {
             //TODO: You task is implement this method
-            return false;
+            return index < backed.length;
         }
 
         public Integer next() {
             //TODO: You task is implement this method
-            return null;
+            return backed[index++];
         }
 
         public void remove() {

@@ -1,5 +1,7 @@
 package ru.buyanov.hunting;
 
+import javax.swing.text.html.HTMLDocument;
+import java.util.ArrayList;
 import java.util.Iterator;
 
 /**
@@ -19,9 +21,9 @@ public class IntIterable implements Iterable<Integer> {
     private class IntIterator implements Iterator<Integer> {
 
         int i=0;        //current element index
-        int value;      //current value
+
         public boolean hasNext() {
-            return i <= backed.length - 1;
+            return i < backed.length;
         }
 
         public Integer next() {
@@ -30,10 +32,9 @@ public class IntIterable implements Iterable<Integer> {
                 throw new IllegalStateException("No such element");
             }
             else {
-                value=backed[i];
-                i++;
-                return value;
+                return backed[i++];
             }
+
         }
 
         public void remove() {

@@ -1,7 +1,6 @@
 package ru.buyanov.hunting;
 
-import javax.swing.text.html.HTMLDocument;
-import java.util.ArrayList;
+
 import java.util.Iterator;
 
 /**
